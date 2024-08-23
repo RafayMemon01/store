@@ -4,16 +4,16 @@
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #F0F0F0; }
+    background: #f4f5f5; }
 
 ::-webkit-scrollbar-thumb {
-    background: #128C7E; /* Use Deep Purple for the scrollbar thumb */
+    background: #ec9a21; /* Use Deep Purple for the scrollbar thumb */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: gray; /* Use Electric Blue for hover effect */
+    background: #F85606; /* Use Electric Blue for hover effect */
 }

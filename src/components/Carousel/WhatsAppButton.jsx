@@ -3,7 +3,7 @@ import { Box, IconButton, useBreakpointValue } from '@chakra-ui/react';
 import { FaWhatsapp } from 'react-icons/fa';
 
 const WhatsAppButton = () => {
-  const buttonSize = useBreakpointValue({ base: 'md', md: 'lg' });
+  const buttonSize = useBreakpointValue({ base: '60px', md: '80px' }); // Set the width and height based on breakpoints
 
   return (
     <Box
@@ -22,13 +22,14 @@ const WhatsAppButton = () => {
       >
         <IconButton
           aria-label="Message on WhatsApp"
-          icon={<FaWhatsapp />}
-          size={buttonSize}
+          icon={<FaWhatsapp size="1.5em" />} // Adjust icon size
           colorScheme="teal"
           borderRadius="full"
           backgroundColor="#25D366"  // WhatsApp green
           color="white"
           _hover={{ backgroundColor: "#128C7E" }}  // Darker green on hover
+          w={buttonSize} // Use width for sizing
+          h={buttonSize} // Use height for sizing
         />
       </a>
     </Box>

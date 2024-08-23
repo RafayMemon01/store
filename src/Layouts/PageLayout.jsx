@@ -12,7 +12,7 @@ const PageLayout = ({ children }) => {
           justify={{ base: "center", md: "space-between" }}
           padding="1.5rem"
           flexWrap={"wrap"}
-          bg="#4B0082" // Deep Purple
+          bg="#F85606" // Deep Purple
           color="white"
         >
           <Text fontSize="xl" fontWeight="bold">
@@ -35,7 +35,7 @@ const PageLayout = ({ children }) => {
         </Flex>
       </header>
       <main>
-        <Box bg="#F0F0F0">
+        <Box bg="#f2eae0">
           <Container maxW="1200px">        <WhatsAppButton />
           {children}</Container>
         </Box>
@@ -46,7 +46,7 @@ const PageLayout = ({ children }) => {
           align="center"
           justify={{ base: "center", md: "space-between" }}
           padding="1rem"
-          bg="#4B0082" // Deep Purple
+          bg="#F85606" // Deep Purple
           color="white"
           mt="auto"
         >

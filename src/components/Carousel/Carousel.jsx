@@ -47,7 +47,7 @@ const Carousel = ({ images }) => {
         top="50%"
         transform="translateY(-50%)"
         zIndex={2}
-        colorScheme="teal"
+        colorScheme="gray"
       />
       <IconButton
         aria-label="Next Slide"
@@ -59,7 +59,7 @@ const Carousel = ({ images }) => {
         top="50%"
         transform="translateY(-50%)"
         zIndex={2}
-        colorScheme="teal"
+        colorScheme="gray"
       />
     </Box>
   );
