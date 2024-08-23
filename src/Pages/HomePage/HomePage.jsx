@@ -19,9 +19,9 @@ const HomePage = () => {
       <Box mt={'1em'}>
         <h2 style={{fontSize:'32px'}}>Our Products</h2>
 
-        <ProductComponent/>
-        <ProductComponent/>
-        <ProductComponent/>
+        <ProductComponent imageURL={'https://via.placeholder.com/150'} productName="Product Name" productDescription="Product description goes here. It should be brief and to the point." productPrice=" $29.99"/>
+        <ProductComponent imageURL={'https://via.placeholder.com/150'} productName="Product Name" productDescription="Product description goes here. It should be brief and to the point." productPrice=" $29.99"/>
+       
       </Box>
     </Box>
   )}

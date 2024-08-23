@@ -1,26 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, IconButton, Image, useBreakpointValue } from "@chakra-ui/react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const Carousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const buttonSize = useBreakpointValue({ base: "sm", md: "lg" });
 
+  // Function to go to the previous slide
   const previousSlide = () => {
-    const lastIndex = images.length - 1;
-    const shouldResetIndex = currentIndex === 0;
-    const index = shouldResetIndex ? lastIndex : currentIndex - 1;
-    setCurrentIndex(index);
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
   };
 
+  // Function to go to the next slide
   const nextSlide = () => {
-    const lastIndex = images.length - 1;
-    const shouldResetIndex = currentIndex === lastIndex;
-    const index = shouldResetIndex ? 0 : currentIndex + 1;
-    setCurrentIndex(index);
+    setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
   };
+
+  // Auto-slide effect using useEffect
+  useEffect(() => {
+    const slideInterval = setInterval(nextSlide, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(slideInterval); // Cleanup interval on component unmount
+  }, [currentIndex]); // Dependency array ensures effect runs when currentIndex changes
 
   const currentImage = images[currentIndex];
-  const buttonSize = useBreakpointValue({ base: "sm", md: "lg" });
 
   return (
     <Box

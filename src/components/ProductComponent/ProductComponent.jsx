@@ -1,7 +1,7 @@
 import { Box, Image, Text, Badge, Button, Flex } from '@chakra-ui/react';
 import React from 'react';
 
-const ProductComponent = () => {
+const ProductComponent = ({productName,imageURL,productDescription,productPrice}) => {
   return (
     <>
       <Box
@@ -15,7 +15,7 @@ const ProductComponent = () => {
         m="4"
       >
         <Image
-          src="https://via.placeholder.com/150" // Placeholder image; replace with your image source
+          src={imageURL}
           alt="Product Image"
           borderRadius="md"
           mb="4"
@@ -33,16 +33,16 @@ const ProductComponent = () => {
           </Box>
 
           <Text mt="1" fontWeight="semibold" as="h4" lineHeight="tight" noOfLines={1}>
-            Product Name
+            {productName}
           </Text>
 
           <Text color="gray.600" fontSize="sm" mt="2">
-            Product description goes here. It should be brief and to the point.
+            {productDescription}
           </Text>
 
           <Flex mt="4" flexWrap={'wrap'} alignItems="center" justifyContent="space-between">
             <Text fontSize="xl" fontWeight="bold" color="#f85606">
-              $29.99
+             {productPrice}
             </Text>
             <Button
               colorScheme="orange"
