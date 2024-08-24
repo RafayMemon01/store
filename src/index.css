@@ -17,3 +17,10 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #F85606; /* Use Electric Blue for hover effect */
 }
+
+
+.heading1{
+    color:"#F85606"; 
+    font-size:"32px"; 
+    font-weight:"bold"
+}

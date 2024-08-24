@@ -10,9 +10,10 @@ const ProductComponent = ({productName,imageURL,productDescription,productPrice}
         borderRadius="lg"
         overflow="hidden"
         boxShadow="md"
-        p="5"
+        p="3"
         bg="#ffffff"
-        m="4"
+        my="4"
+        mx={".6"}
       >
         <Image
           src={imageURL}
@@ -48,7 +49,7 @@ const ProductComponent = ({productName,imageURL,productDescription,productPrice}
               colorScheme="orange"
               variant="solid"
               size="sm"
-              onClick={() => window.open('https://wa.me/yourphonenumber?text=I%20am%20interested%20in%20this%20product', '_blank')}
+              onClick={() => window.open(`https://wa.me/yourphonenumber?text=I%20am%20interested%20in%20${productName}`, '_blank')}
             >
               Buy on WhatsApp
             </Button>

@@ -1,8 +1,11 @@
 import { Flex, Text, Box, Button, Container } from "@chakra-ui/react";
 import React from "react";
 import WhatsAppButton from "../components/Carousel/WhatsAppButton";
+import { Link } from "react-router-dom";
+import useAuthStore from "../Store/useAuthStore";
 
 const PageLayout = ({ children }) => {
+  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
   return (
     <>
       <header>
@@ -18,19 +21,23 @@ const PageLayout = ({ children }) => {
           <Text fontSize="xl" fontWeight="bold">
             Zyra
           </Text>
-          <Flex gap="2rem">
-            <Text cursor="pointer" _hover={{ color: "#00FFFF" }}>
+          <Flex flexWrap={"wrap"} justifyContent={{base:"center",md:"start"}} gap="2rem">
+            <Link to={'/'} cursor="pointer" _hover={{ color: "#00FFFF" }}>
               Home
-            </Text>
-            <Text cursor="pointer" _hover={{ color: "#00FFFF" }}>
+            </Link>
+            <Link to={'#'} cursor="pointer" _hover={{ color: "#00FFFF" }}>
               About
-            </Text>
-            <Text cursor="pointer" _hover={{ color: "#00FFFF" }}>
+            </Link>
+            <Link to={'products'} cursor="pointer" _hover={{ color: "#00FFFF" }}>
               Products
-            </Text>
-            <Text cursor="pointer" _hover={{ color: "#00FFFF" }}>
+            </Link>
+            <Text to={'#'} cursor="pointer" _hover={{ color: "#00FFFF" }}>
               Contact
             </Text>
+            {isAuthenticated?
+            <Link to={'/h-admin'} cursor="pointer" _hover={{ color: "#00FFFF" }}>
+              Dashboard
+            </Link>:null}
           </Flex>
         </Flex>
       </header>
