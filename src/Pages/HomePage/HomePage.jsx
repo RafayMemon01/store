@@ -1,18 +1,16 @@
 import React from "react";
 import { Box, Flex, Spinner, Text } from "@chakra-ui/react";
-import Carousel from "../../components/Carousel/Carousel"; // Import your Carousel component
+import Carousel from "../../components/Carousel/Carousel"; 
 import ProductComponent from "../../components/ProductComponent/ProductComponent";
 import { Link } from "react-router-dom";
 import useFetchProducts from "../../hooks/useFetchProducts";
 import useProductStore from "../../Store/useProductStore";
-import useCarouselImages from "../../hooks/useCarosualmages"; // Import the hook for fetching carousel images
-
+import useCarouselImages from "../../hooks/useCarosualmages"; 
 const HomePage = () => {
-  const { loading: productsLoading, error: productsError } = useFetchProducts(); // Fetch products from Firestore
-  const { images, loading: carouselLoading, error: carouselError } = useCarouselImages(); // Fetch carousel images
-  const products = useProductStore((state) => state.products); // Get products from Zustand store
+  const { loading: productsLoading, error: productsError } = useFetchProducts(); 
+  const { images, loading: carouselLoading, error: carouselError } = useCarouselImages(); 
+  const products = useProductStore((state) => state.products);
 
-  // Get the top 6 products
   const topProducts = products.slice(0, 6);
 
   return (
@@ -29,7 +27,7 @@ const HomePage = () => {
       <Box mt={"1em"}>
         <h2 style={{ fontSize: "32px" }}>New Arrival</h2>
 
-        {/* Display Spinner or Error */}
+       
         {productsLoading ? (
           <Spinner size="xl" mt={6} />
         ) : productsError ? (
@@ -56,7 +54,7 @@ const HomePage = () => {
           </Flex>
         )}
 
-        {/* View All Products */}
+       
         <Box mt={"1em"} textAlign={"center"}>
           <Link to="/products">View All Products</Link>
         </Box>

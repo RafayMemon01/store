@@ -6,23 +6,19 @@ const Carousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const buttonSize = useBreakpointValue({ base: "sm", md: "lg" });
 
-  // Function to go to the previous slide
   const previousSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
   };
 
-  // Function to go to the next slide
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
   };
 
-  // Auto-slide effect using useEffect
   useEffect(() => {
-    const slideInterval = setInterval(nextSlide, 3000); // Change slide every 3 seconds
+    const slideInterval = setInterval(nextSlide, 4000); 
 
-    return () => clearInterval(slideInterval); // Cleanup interval on component unmount
-  }, [currentIndex]); // Dependency array ensures effect runs when currentIndex changes
-
+    return () => clearInterval(slideInterval); 
+  }, [currentIndex]); 
   const currentImage = images[currentIndex];
 
   return (

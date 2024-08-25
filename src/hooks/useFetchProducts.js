@@ -2,30 +2,30 @@
 
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase/firebase"; // Import Firestore from your Firebase setup
-import useProductStore from "../Store/useProductStore"; // Import Zustand store
+import { db } from "../firebase/firebase"; 
+import useProductStore from "../Store/useProductStore"; 
 
 const useFetchProducts = () => {
-  const setProducts = useProductStore((state) => state.setProducts); // Zustand action to set products
-  const [loading, setLoading] = useState(true); // Local state for loading
-  const [error, setError] = useState(null); // Local state for errors
+  const setProducts = useProductStore((state) => state.setProducts); 
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null); 
 
   useEffect(() => {
     const fetchProducts = async () => {
       setLoading(true);
       try {
-        const querySnapshot = await getDocs(collection(db, "products")); // Fetching products from Firestore
+        const querySnapshot = await getDocs(collection(db, "products"));
         const productsData = querySnapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
         
-        console.log("Fetched Products:", productsData); // Add this line to log fetched products
+        console.log("Fetched Products:", productsData);
         
-        setProducts(productsData); // Update Zustand store with fetched products
+        setProducts(productsData); 
       } catch (err) {
         setError(err);
-        console.error("Error fetching products:", err); // Add this line to log errors
+        console.error("Error fetching products:", err); 
       } finally {
         setLoading(false);
       }
@@ -33,7 +33,7 @@ const useFetchProducts = () => {
   
     fetchProducts();
   }, [setProducts]);
-   // Dependency on setProducts to ensure it is always the latest reference
+   
 
   return { loading, error };
 };

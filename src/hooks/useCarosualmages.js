@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs, addDoc, deleteDoc, doc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage";
-import { db, storage } from "../firebase/firebase"; // Import Firestore and Storage from your Firebase setup
-
+import { db, storage } from "../firebase/firebase";
 const useCarouselImages = () => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);

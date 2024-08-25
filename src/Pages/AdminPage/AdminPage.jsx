@@ -94,7 +94,7 @@ const AdminPage = () => {
   };
 
   const handleLogout = () => {
-    logout(); // Call the logout function from the auth store
+    logout(); 
     toast({
       title: 'Logged Out',
       description: 'You have been logged out successfully.',

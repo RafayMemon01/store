@@ -1,6 +1,5 @@
 import { doc, deleteDoc } from 'firebase/firestore';
-import { db } from '../firebase/firebase'; // Import your Firestore setup
-
+import { db } from '../firebase/firebase'; 
 const deleteProductFromFirestore = async (productId) => {
   try {
     const productRef = doc(db, 'products', productId);

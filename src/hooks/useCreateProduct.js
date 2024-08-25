@@ -3,14 +3,13 @@ import { addDoc, collection, updateDoc, arrayUnion, doc } from "firebase/firesto
 import { ref, uploadString, getDownloadURL } from "firebase/storage";
 import { db, storage } from "../firebase/firebase";
 import useShowToast from "./useShowToast";
-import useProductStore from "../Store/useProductStore";  // Assuming you have a product store
+import useProductStore from "../Store/useProductStore"; 
 
 function useCreateProduct() {
   const showToast = useShowToast();
   const [isLoading, setIsLoading] = useState(false);
 
-  const { addProduct } = useProductStore(); // Assuming you have a function to add product to the store
-
+  const { addProduct } = useProductStore(); 
   const handleCreateProduct = async (selectedFile, productName, productDescription, productPrice) => {
     if (isLoading) return;
     if (!selectedFile) throw new Error("No file selected");

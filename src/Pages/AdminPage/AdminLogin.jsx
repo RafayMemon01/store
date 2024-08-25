@@ -11,17 +11,17 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { auth } from "../../firebase/firebase"; // Import Firebase auth
-import useAuthStore from "../../Store/useAuthStore"; // Import Zustand store
-import { useNavigate } from "react-router-dom"; // Use useNavigate hook
+import { auth } from "../../firebase/firebase"; 
+import useAuthStore from "../../Store/useAuthStore"; 
+import { useNavigate } from "react-router-dom"; 
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const setUser = useAuthStore((state) => state.setUser); // Zustand action to set user
+  const setUser = useAuthStore((state) => state.setUser); 
   const toast = useToast();
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const navigate = useNavigate(); 
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
@@ -29,7 +29,7 @@ const AdminLogin = () => {
   const handleLogin = async () => {
     try {
       const result = await signInWithEmailAndPassword(email, password);
-      if (result) { // Ensure we check the result after await
+      if (result) { 
         setUser(result.user);
         toast({
           title: "Login Successful",
@@ -38,7 +38,7 @@ const AdminLogin = () => {
           duration: 3000,
           isClosable: true,
         });
-        navigate("/h-admin"); // Use navigate function instead of Navigate component
+        navigate("/h-admin");
       }
     } catch (error) {
       toast({
