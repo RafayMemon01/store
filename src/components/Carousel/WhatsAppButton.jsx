@@ -16,7 +16,7 @@ const WhatsAppButton = () => {
       justifyContent="center"
     >
       <a
-        href="https://wa.me/yourphonenumber"  // Replace 'yourphonenumber' with your WhatsApp number
+        href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}`}  // Replace 'yourphonenumber' with your WhatsApp number
         target="_blank"
         rel="noopener noreferrer"
       >

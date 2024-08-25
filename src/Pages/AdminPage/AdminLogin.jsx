@@ -13,7 +13,7 @@ import {
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase/firebase"; // Import Firebase auth
 import useAuthStore from "../../Store/useAuthStore"; // Import Zustand store
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // Use useNavigate hook
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
@@ -21,15 +21,16 @@ const AdminLogin = () => {
   const setUser = useAuthStore((state) => state.setUser); // Zustand action to set user
   const toast = useToast();
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+  const navigate = useNavigate(); // Initialize useNavigate hook
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
   const handleLogin = async () => {
     try {
-      await signInWithEmailAndPassword(email, password);
-      if (user) {
-        setUser(user.user);
+      const result = await signInWithEmailAndPassword(email, password);
+      if (result) { // Ensure we check the result after await
+        setUser(result.user);
         toast({
           title: "Login Successful",
           description: "Welcome to the admin dashboard.",
@@ -37,7 +38,7 @@ const AdminLogin = () => {
           duration: 3000,
           isClosable: true,
         });
-        Navigate("/h-admin");
+        navigate("/h-admin"); // Use navigate function instead of Navigate component
       }
     } catch (error) {
       toast({
