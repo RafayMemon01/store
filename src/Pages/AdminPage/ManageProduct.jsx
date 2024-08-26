@@ -96,12 +96,12 @@ const ManageProduct = () => {
       {/* Button to open the modal */}
       <Button
         onClick={onOpen}
-        bg={"#F85606"}
+        bg={"#242423"}
         color={"white"}
         _hover={{
           bg: "white",
-          border: "1px solid #F85606",
-          color: "#F85606",
+          border: "1px solid #242423",
+          color: "#242423",
         }}
         mt={4}
       >
@@ -177,7 +177,7 @@ const ManageProduct = () => {
             <Button
               onClick={handleProductCreation}
               isLoading={isLoading}
-              bg={"#F85606"}
+              bg={"#242423"}
               color={"white"}
             >
               Submit

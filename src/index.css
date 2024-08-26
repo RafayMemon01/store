@@ -11,16 +11,16 @@
     background: #f4f5f5; }
 
 ::-webkit-scrollbar-thumb {
-    background: #ec9a21; /* Use Deep Purple for the scrollbar thumb */
+    background: #515150; /* Use Deep Purple for the scrollbar thumb */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #F85606; /* Use Electric Blue for hover effect */
+    background: #242423; /* Use Electric Blue for hover effect */
 }
 
 
 .heading1{
-    color:"#F85606"; 
+    color:"#242423"; 
     font-size:"32px"; 
     font-weight:"bold"
 }

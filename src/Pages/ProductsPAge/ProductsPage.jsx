@@ -26,12 +26,12 @@ const ProductsPage = () => {
     <Box minH="80vh" pt="2em">
       
       <Flex gap={1} justifyContent={{ base: "center", md: "space-between" }} alignItems="center" flexWrap="wrap">
-        <Text color="#F85606" fontSize="22px" fontWeight="bold">
+        <Text color="#242423" fontSize="22px" fontWeight="bold">
           Products For You
         </Text>
         <Input
           placeholder="Search"
-          outlineColor="#f85606"
+          outlineColor="#242423"
           width="200px"
           size="sm"
           value={searchQuery}

@@ -77,12 +77,12 @@ const AdminLogin = () => {
           />
         </FormControl>
         <Button
-          bg="#F85606"
+          bg="#242423"
           color={"white"}
           _hover={{
             bg: "white",
-            border: "1px solid #F85606",
-            color: "#F85606",
+            border: "1px solid #242423",
+            color: "#242423",
           }}
           onClick={handleLogin}
           isLoading={loading}

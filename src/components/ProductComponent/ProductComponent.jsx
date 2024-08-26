@@ -32,7 +32,7 @@ const ProductComponent = ({ productName, imageURL, productDescription, productPr
 
         <Box p="6">
           <Box display="flex" alignItems="baseline">
-            <Badge borderRadius="full" px="2" bg="#f85606" color="white">
+            <Badge borderRadius="full" px="2" bg="#242423" color="white">
               New
             </Badge>
           </Box>
@@ -52,7 +52,7 @@ const ProductComponent = ({ productName, imageURL, productDescription, productPr
           )}
 
           <Flex mt="4" flexWrap={'wrap'} alignItems="center" justifyContent="space-between">
-            <Text fontSize="xl" fontWeight="bold" color="#f85606">
+            <Text fontSize="xl" fontWeight="bold" color="#242423">
               {productPrice} PKR
             </Text>
             <Button

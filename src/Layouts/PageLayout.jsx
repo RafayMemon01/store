@@ -17,12 +17,12 @@ const PageLayout = ({ children }) => {
           align="center"
           justify="space-between"
           padding="1.5rem"
-          bg="#F85606" // Deep Orange
+          bg="#242423" // Deep Orange
           color="white"
           position="relative"
         >
           <Text fontSize="xl" fontWeight="bold">
-            Zyra
+            Zyra Collection
           </Text>
           <IconButton
             display={{ base: "block", md: "none" }}
@@ -37,7 +37,7 @@ const PageLayout = ({ children }) => {
               direction="column"
               align="center"
               display={{ base: "flex", md: "none" }}
-              bg="#F85606"
+              bg="#242423"
               position="absolute"
               top="100%"
               left="0"
@@ -104,7 +104,7 @@ const PageLayout = ({ children }) => {
           align="center"
           justify={{ base: "center", md: "space-between" }}
           padding="1rem"
-          bg="#F85606" // Deep Orange
+          bg="#242423" // Deep Orange
           color="white"
           mt="auto"
         >
